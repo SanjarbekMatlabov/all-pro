@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - All Pro Couriers LLC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            list-style: none;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #1a1a1a, #2c2c2c);
+            background-size: 200% 200%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+            line-height: 1.6;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Gradient Background Animation */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Particle Canvas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: 2px solid #a78bfa;
+            color: #a78bfa;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button i {
+            transition: transform 0.5s ease;
+        }
+
+        .back-button:hover {
+            background: #a78bfa;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+            animation: glowTrail 1.5s infinite;
+        }
+
+        .back-button:hover i {
+            transform: translateX(-5px) rotate(360deg);
+        }
+
+        @keyframes glowTrail {
+            0% {
+                box-shadow: 0 0 5px rgba(167, 139, 250, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(167, 139, 250, 0.8), 0 0 30px rgba(167, 139, 250, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(167, 139, 250, 0.5);
+            }
+        }
+
+        /* Last Updated */
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            text-align: right;
+            margin-bottom: 40px;
+        }
+
+        /* Main Content Section */
+        .privacy-section {
+            position: relative;
+            padding: 40px 20px;
+            background: transparent;
+            z-index: 2;
+        }
+
+        .accent-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(45deg, #a78bfa, #8b5cf6);
+            box-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+        }
+
+        .privacy-content {
+            background: rgba(44, 44, 44, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            border-image: linear-gradient(45deg, #a78bfa, #8b5cf6) 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .privacy-content:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #a78bfa, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
+            border-bottom: 2px solid #a78bfa;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, #a78bfa, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .header-info,
+        .contact-info {
+            background: rgba(44, 44, 44, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #a78bfa;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .header-info:hover,
+        .contact-info:hover {
+            transform: translateY(-5px);
+        }
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        ul p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        a {
+            color: #a78bfa;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #8b5cf6;
+            bottom: -2px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        a:hover {
+            color: #8b5cf6;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        em {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p, ul li, ul p, .contact-info p {
+                font-size: 0.9rem;
+            }
+
+            .last-updated {
+                font-size: 0.8em;
+            }
+
+            .back-button {
+                top: 10px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .privacy-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+    <p class="last-updated">Last updated 03/25/2025</p>
+
+    <section class="privacy-section">
+        <div class="accent-line"></div>
+        <div class="privacy-content">
+            <h1>Billad Trucking LLC Privacy Policy</h1>
+
+            <div class="header-info">
+                <p>Welcome to Billad Trucking LLC! Protecting your privacy is of utmost importance to us.
+                    This Privacy Policy outlines how we collect, use, and safeguard your personal information when
+                    you engage with our services. By using our website and services, you agree to the practices
+                    described in this policy.
+                </p>
+                <p>Billad Trucking LLC is committed to providing reliable freight delivery services for
+                    general cargo. This Privacy Policy explains how we handle your personal information to
+                    maintain transparency and trust.
+                </p>
+            </div>
+
+            <h2>Types of Information Collected</h2>
+            <p>We collect various types of personal information from our customers. This includes:</p>
+            <ul>
+                <li>Personal identification details such as your name, address, phone number, and email address.
+                    Additionally, we may gather business-related information, including your company name, billing
+                    information, and shipping preferences. We also collect website usage data, such as IP
+                    addresses, browser types, cookies, and activity logs.</li>
+            </ul>
+
+            <h2>Method of Information Collection</h2>
+            <p>We collect your personal information through several means:</p>
+            <ul>
+                <li>Direct interactions, such as when you contact us via phone, email, or by filling out forms on our
+                    website. We also gather transactional data during the booking, invoicing, or delivery of services.
+                    Furthermore, cookies and analytics tools are used to monitor website usage and improve your
+                    browsing experience.</li>
+            </ul>
+
+            <h2>Purpose of Data Collection</h2>
+            <p>The data we collect is used to:</p>
+            <ul>
+                <li>Facilitate freight bookings and deliveries, communicate updates about shipments or services,
+                    enhance our service offerings, and comply with legal and security requirements.</li>
+            </ul>
+            <p>
+                Messaging frequency may vary.<br>
+                Message and data rates may apply.<br>
+                To opt out at any time, text STOP.<br>
+                For assistance, text HELP or visit our website.
+            </p>
+
+            <h2>Data Security Measures</h2>
+            <p>The security of your personal information is our priority. We:</p>
+            <ul>
+                <li>Use encryption methods to protect data transmission and storage, implement access controls to
+                    prevent unauthorized access, and conduct regular security audits to maintain system integrity and
+                    prevent misuse.</li>
+            </ul>
+
+            <h2>Data Sharing</h2>
+            <ul>
+                <p>Phone numbers collected with SMS consent will not be sold, rented, or shared with third parties or
+                    affiliates for marketing purposes under any circumstances.</p>
+            </ul>
+
+            <h2>User Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access the personal data we hold about you. If necessary, you may update or correct inaccuracies
+                    in your information or request the deletion of your data, subject to legal obligations. You also
+                    have the option to opt out of marketing communications at any time. For assistance with these
+                    rights, please reach out to us.</li>
+            </ul>
+
+            <h2>SMS Communication</h2>
+            <ul>
+                <p>The information (Phone Number) obtained as part of the SMS consent process will not be shared with third
+                    parties for marketing purposes. If you have consented to receive text messages from "Billad Trucking LLC", you
+                    may receive messages related to the following: Pick Up Times, Delivery ETA's, Appointment and Safety Reminders.
+                    Message frequency may vary depending on the type of communication. For example, you may receive up to [5-15] SMS
+                    messages per week related to your appointments and reminders. Please note that standard message and data rates
+                    may apply, depending on your carrier’s pricing plan. These fees may vary if the message is sent domestically or
+                    internationally.</p>
+                <p>You may opt-in to receive SMS messages from "Billad Trucking LLC" by submitting our online contact form. You
+                    can opt out of receiving SMS messages at any time. To do so, simply reply "STOP" to any SMS message you receive.
+                    Alternatively, you can contact us directly to request removal from our messaging list. If you are experiencing
+                    any issues, you can reply with the keyword HELP. Or, you can get help directly by calling our contact number. If
+                    you do not wish to receive SMS messages, you can choose not to check the SMS consent box on our forms.</p>
+                <p>Standard Messaging Disclosures:</p>
+                <p>Message and data rates may apply.<br>
+                    You can opt out at any time by texting "STOP."<br>
+                    For assistance, text "HELP" or visit our <a href="privacy.html">Privacy Policy</a> and <a
+                        href="terms.html">Terms and Conditions</a> pages.<br>
+                    Message frequency may vary.</p>
+            </ul>
+
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>If you have questions, concerns, or requests regarding this Privacy Policy, please contact us
+                    using the form on our website. Thank you.</p>
+            </div>
+
+            <p><em>We may update this Privacy Policy periodically to reflect changes in our practices or comply with legal
+                    requirements. Please review this document regularly for updates.</em></p>
+        </div>
+    </section>
+
+    <script>
+        // Particle Animation for Background
+        function initParticles() {
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            const particleCount = 100;
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 3 + 1;
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 - 0.5;
+                    this.opacity = Math.random() * 0.5 + 0.3;
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    // Bounce off edges
+                    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+                    // Fade in and out
+                    this.opacity += Math.random() * 0.02 - 0.01;
+                    if (this.opacity < 0.3) this.opacity = 0.3;
+                    if (this.opacity > 0.8) this.opacity = 0.8;
+                }
+
+                draw() {
+                    ctx.fillStyle = `rgba(167, 139, 250, ${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            // Initialize particles
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            // Resize canvas on window resize
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+
+        // Initialize Particle Animation on Page Load
+        document.addEventListener('DOMContentLoaded', () => {
+            initParticles();
+        });
+    </script>
+</body>
+</html>
