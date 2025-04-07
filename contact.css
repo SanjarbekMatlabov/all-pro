@@ -29,6 +29,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
+    pointer-events: none; /* Prevent canvas from capturing mouse events */
 }
 
 /* Contact Section */
@@ -223,7 +224,7 @@ body {
 }
 
 .back-button:hover i {
-    transform: translateX(-5px) rotate(-10deg);
+    transform: translateX(-5px) rotate(10deg);
 }
 
 @keyframes glowTrail {
@@ -301,6 +302,84 @@ body {
     box-shadow: 0 5px 15px rgba(167, 139, 250, 0.5);
 }
 
+/* Footer Styles */
+.footer {
+    background: #1a1a1a;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1000; /* Ensure footer is above other elements */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, #a78bfa, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.footer-section .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, #a78bfa, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #a78bfa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #8b5cf6;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.footer-bottom a {
+    color: #a78bfa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 1001; /* Ensure links are above other elements */
+}
+
+.footer-bottom a:hover {
+    color: #8b5cf6;
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact {
@@ -338,124 +417,13 @@ body {
     .map-container iframe {
         height: 200px;
     }
-}
-/* Footer Section */
-.footer {
-    background: linear-gradient(45deg, #1a1a1a, #2c2c2c);
-    padding: 50px 100px 20px;
-    border-top: 1px solid #a78bfa;
-    color: #ccc;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-section h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.footer-section.company-info .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.footer-section.company-info p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.footer-section.quick-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section.quick-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section.quick-links ul li a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.footer-section.quick-links ul li a:hover {
-    color: #a78bfa;
-}
-
-.footer-section.contact-info p {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-}
-
-.footer-section.contact-info a {
-    color: #a78bfa;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section.contact-info a:hover {
-    color: #8b5cf6;
-    text-decoration: underline;
-}
-
-.footer-section.social-media .social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.footer-section.social-media .social-icon {
-    color: #a78bfa;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.footer-section.social-media .social-icon:hover {
-    color: #8b5cf6;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #333;
-}
-
-.footer-bottom p {
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
-/* Responsive Design for Footer */
-@media (max-width: 768px) {
-    .footer {
-        padding: 30px 20px 10px;
-    }
 
     .footer-content {
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
     }
 
     .footer-section {
         text-align: center;
-    }
-
-    .footer-section.social-media .social-icons {
-        justify-content: center;
     }
 }
