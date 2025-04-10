@@ -62,18 +62,52 @@ function initParticles() {
         canvas.height = window.innerHeight;
     });
 }
-
-// Contact Form Submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Form submitted successfully! We will get back to you soon.');
-        contactForm.reset();
-    });
-}
-
 // Initialize Particle Animation on Page Load
 document.addEventListener('DOMContentLoaded', () => {
     initParticles();
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.contact-form');
+    const submitButton = form.querySelector('.submit-button');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Formaning standart yuborilishini to'xtatamiz
+
+        // Submit tugmasini vaqtincha o'chirib qo'yamiz
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
+        // Formadan ma'lumotlarni olish
+        const formData = new FormData(form);
+
+        // SMS-consent checkbox qiymatini "Yes" yoki "No" sifatida o'zgartirish
+        formData.set('sms-consent', formData.get('sms-consent') ? 'Yes' : 'No');
+
+        // Apps Script URL'ga so'rov yuborish
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(result => {
+            if (result === 'Success') {
+                // Muvaffaqiyatli xabar ko'rsatish
+                alert('Thank you! Your message has been sent successfully.');
+                form.reset(); // Formani tozalash
+            } else {
+                // Xato xabarini ko'rsatish
+                alert('Error: ' + result);
+            }
+        })
+        .catch(error => {
+            // Tarmoq xatosi bo'lsa
+            alert('Error: Something went wrong. Please try again later.');
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            // Submit tugmasini qayta faollashtirish
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit';
+        });
+    });
 });
